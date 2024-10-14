@@ -17,14 +17,14 @@ class ViewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_view, container, false).apply {
-            val displayTextView = findViewById<TextView>(R.id.displayTextView)
             val nameEditText = findViewById<EditText>(R.id.nameEditText)
             val changeButton = findViewById<Button>(R.id.changeButton)
+
 
             changeButton.setOnClickListener {
                 val name = nameEditText.text
 
-                displayTextView.text = if (name.isNotBlank()) {
+                findViewById<TextView>(R.id.displayTextView).text = if (name.isNotBlank()) {
                     "Hello, $name!"
                 } else {
                     "Please enter your name"
